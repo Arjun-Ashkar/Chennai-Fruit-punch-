@@ -1,0 +1,278 @@
+/* ============================================================
+   CHENNAI FRUIT PUNCH — HERO SECTION STYLES
+   ============================================================ */
+
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 130px;
+  padding-bottom: 70px;
+  background: radial-gradient(circle at 85% 20%, rgba(255, 221, 0, 0.18) 0%, transparent 45%),
+              radial-gradient(circle at 10% 70%, rgba(64, 145, 108, 0.14) 0%, transparent 40%),
+              linear-gradient(180deg, #faf7f2 0%, #f6f0e4 100%);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 48px;
+  position: relative;
+  z-index: 10;
+}
+
+/* Hero Content Left */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  background: rgba(45, 106, 79, 0.1);
+  border: 1px solid rgba(45, 106, 79, 0.18);
+  color: var(--green-dark);
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  width: fit-content;
+}
+
+.hero-title {
+  font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+  font-weight: 900;
+  color: var(--green-deep);
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.hero-title-highlight {
+  background: linear-gradient(135deg, var(--green-primary) 0%, var(--orange-bright) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+  font-weight: 700;
+  color: var(--orange);
+  font-family: var(--font-heading);
+}
+
+/* Dynamic Rotating Phrase Box */
+.rotating-phrase-box {
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-glass);
+  border-left: 4px solid var(--green-fresh);
+  border-radius: var(--radius-md);
+  padding: 12px 18px;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: var(--shadow-sm);
+}
+
+.rotating-phrase-icon {
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.rotating-phrase-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  animation: fadeInSlideUp 0.4s ease-out;
+}
+
+.hero-description {
+  font-size: 1.08rem;
+  color: var(--text-secondary);
+  max-width: 540px;
+  line-height: 1.65;
+}
+
+/* CTA Buttons Group */
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+/* Hero Visual Composition Right */
+.hero-visual-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-visual-centerpiece {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 25px 60px -15px rgba(27, 67, 50, 0.25);
+  border: 4px solid #ffffff;
+  background: #ffffff;
+}
+
+.hero-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.hero-visual-centerpiece:hover .hero-main-img {
+  transform: scale(1.04);
+}
+
+/* Visual Badges floating over image */
+.hero-glass-badge {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: var(--radius-md);
+  padding: 10px 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 12;
+}
+
+.badge-top-left {
+  top: 20px;
+  left: -20px;
+  animation: floatGentle 4s ease-in-out infinite;
+}
+
+.badge-bottom-right {
+  bottom: 25px;
+  right: -20px;
+  animation: floatSlow 4.5s ease-in-out infinite 0.5s;
+}
+
+.badge-icon-box {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--green-mint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.badge-title {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--green-deep);
+  line-height: 1.2;
+}
+
+.badge-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* Floating Ambient Fruits */
+.floating-fruit {
+  position: absolute;
+  user-select: none;
+  pointer-events: none;
+  z-index: 5;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.08));
+}
+
+.fruit-lemon {
+  top: 12%;
+  left: 3%;
+  font-size: 46px;
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+.fruit-orange {
+  top: 6%;
+  right: 12%;
+  font-size: 52px;
+  animation: floatReverse 6s ease-in-out infinite 0.4s;
+}
+
+.fruit-watermelon {
+  bottom: 12%;
+  left: 8%;
+  font-size: 50px;
+  animation: floatSlow 5.5s ease-in-out infinite 1s;
+}
+
+.fruit-strawberry {
+  bottom: 15%;
+  right: 5%;
+  font-size: 42px;
+  animation: floatGentle 4s ease-in-out infinite 0.8s;
+}
+
+.fruit-pineapple {
+  top: 45%;
+  right: -2%;
+  font-size: 48px;
+  animation: floatReverse 6.5s ease-in-out infinite 1.2s;
+}
+
+/* Responsive adjustments */
+@media (max-width: 960px) {
+  .hero-section {
+    padding-top: 100px;
+    padding-bottom: 50px;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  .hero-content {
+    align-items: center;
+  }
+  .hero-description {
+    margin: 0 auto;
+  }
+  .hero-cta-group {
+    justify-content: center;
+  }
+  .badge-top-left {
+    left: 10px;
+  }
+  .badge-bottom-right {
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-visual-centerpiece {
+    max-width: 320px;
+  }
+  .badge-top-left, .badge-bottom-right {
+    padding: 8px 12px;
+  }
+}

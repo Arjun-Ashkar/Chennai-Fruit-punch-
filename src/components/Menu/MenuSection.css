@@ -1,0 +1,216 @@
+/* ============================================================
+   CHENNAI FRUIT PUNCH — MENU SECTION STYLES
+   ============================================================ */
+
+.menu-section {
+  background: var(--bg-cream);
+  position: relative;
+  padding-top: 80px;
+}
+
+/* Search Bar Wrapper */
+.menu-search-wrapper {
+  max-width: 540px;
+  margin: 0 auto 36px auto;
+  position: relative;
+}
+
+.menu-search-input-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.menu-search-icon {
+  position: absolute;
+  left: 20px;
+  font-size: 18px;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.menu-search-input {
+  width: 100%;
+  padding: 16px 20px 16px 54px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid rgba(27, 67, 50, 0.12);
+  background: #ffffff;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--text-primary);
+  box-shadow: 0 4px 18px rgba(15, 56, 44, 0.05);
+  transition: all var(--transition-normal);
+  outline: none;
+}
+
+.menu-search-input:focus {
+  border-color: var(--green-fresh);
+  box-shadow: 0 6px 24px rgba(45, 106, 79, 0.15);
+}
+
+.menu-search-clear {
+  position: absolute;
+  right: 18px;
+  background: #ece7de;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: var(--text-muted);
+  cursor: pointer;
+  border: none;
+}
+
+/* Category Filter Bar */
+.menu-categories-nav {
+  margin-bottom: 44px;
+  position: relative;
+}
+
+.categories-scroll-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 6px 4px 16px 4px;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+.category-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  font-family: var(--font-heading);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+}
+
+.category-pill-btn:hover {
+  color: var(--green-deep);
+  border-color: rgba(45, 106, 79, 0.3);
+  transform: translateY(-2px);
+}
+
+.category-pill-btn.active {
+  background: linear-gradient(135deg, var(--green-primary) 0%, var(--green-dark) 100%);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 6px 18px rgba(27, 67, 50, 0.28);
+}
+
+/* Category Note / Extras Banner */
+.category-extras-banner {
+  background: #fff8eb;
+  border-left: 4px solid var(--orange);
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Combos Highlight Section */
+.combos-container {
+  margin-bottom: 56px;
+}
+
+.combos-title-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.combos-heading {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--green-deep);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.combos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+/* Regular Menu Grid */
+.menu-items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 22px;
+  transition: opacity 0.3s ease;
+}
+
+.menu-image-disclaimer {
+  margin: 34px auto 0;
+  max-width: 760px;
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Empty search result */
+.empty-menu-state {
+  text-align: center;
+  padding: 60px 20px;
+  background: #ffffff;
+  border-radius: var(--radius-xl);
+  border: 1px dashed var(--border-accent);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.empty-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.empty-title {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--green-deep);
+  margin-bottom: 8px;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 640px) {
+  .menu-items-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .combos-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .categories-scroll-container {
+    padding-bottom: 12px;
+  }
+  .category-pill-btn {
+    padding: 8px 16px;
+    font-size: 12.5px;
+  }
+}

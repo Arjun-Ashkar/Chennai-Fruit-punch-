@@ -1,0 +1,77 @@
+/* ============================================================
+   CHENNAI FRUIT PUNCH — EXPERIENCE SECTION STYLES
+   ============================================================ */
+
+.experience-section {
+  background: #ffffff;
+  position: relative;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.experience-card {
+  background: var(--bg-cream);
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  transition: all var(--transition-normal);
+}
+
+.experience-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  background: #ffffff;
+  border-color: rgba(45, 106, 79, 0.2);
+}
+
+.experience-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast);
+}
+
+.experience-card:hover .experience-icon {
+  transform: scale(1.15) rotate(8deg);
+}
+
+.experience-card-title {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--green-deep);
+}
+
+.experience-card-text {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 960px) {
+  .experience-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 500px) {
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+}

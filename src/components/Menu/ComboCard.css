@@ -1,0 +1,155 @@
+/* ============================================================
+   CHENNAI FRUIT PUNCH — COMBO CARD STYLES
+   ============================================================ */
+
+.combo-card {
+  background: #ffffff;
+  border-radius: var(--radius-xl);
+  border: 2px solid rgba(247, 127, 0, 0.22);
+  overflow: hidden;
+  box-shadow: 0 10px 30px -5px rgba(247, 127, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+  position: relative;
+  text-align: left;
+}
+
+.combo-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 48px -10px rgba(247, 127, 0, 0.22);
+  border-color: var(--orange);
+}
+
+/* Combo Header Bar */
+.combo-header-bar {
+  background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(247, 127, 0, 0.15);
+}
+
+.combo-number-badge {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--orange-bright);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.combo-badge-pill {
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background: var(--orange-bright);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Image */
+.combo-img-wrap {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.combo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.combo-card:hover .combo-img {
+  transform: scale(1.06);
+}
+
+/* Body */
+.combo-body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.combo-items-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.combo-item-entry {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-primary);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.combo-check-icon {
+  color: var(--green-fresh);
+  font-size: 14px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Footer & Price */
+.combo-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(27, 67, 50, 0.08);
+  padding-top: 16px;
+  margin-top: 10px;
+}
+
+.combo-price-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.combo-price-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.combo-price {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--orange-bright);
+  line-height: 1;
+}
+
+.combo-price .currency {
+  font-size: 20px;
+  margin-right: 2px;
+}
+
+.combo-order-tag {
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  background: var(--green-mint);
+  color: var(--green-dark);
+}

@@ -1,0 +1,63 @@
+/* ============================================================
+   CHENNAI FRUIT PUNCH — MOBILE FLOATING CTA BAR
+   ============================================================ */
+
+.mobile-cta-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 890;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(27, 67, 50, 0.1);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+  padding: 10px 16px;
+}
+
+.mobile-cta-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 10px;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.mobile-cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 8px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-mobile-menu {
+  background: var(--green-mint);
+  color: var(--green-dark);
+}
+
+.btn-mobile-directions {
+  background: linear-gradient(135deg, var(--green-primary), var(--green-dark));
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(27, 67, 50, 0.25);
+}
+
+.btn-mobile-call {
+  background: #fff3b0;
+  color: #785a00;
+}
+
+@media (max-width: 768px) {
+  .mobile-cta-bar {
+    display: block;
+  }
+}

@@ -1,0 +1,171 @@
+/* ============================================================
+   CHENNAI FRUIT PUNCH — ABOUT SECTION STYLES
+   ============================================================ */
+
+.about-section {
+  background: #ffffff;
+  position: relative;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 56px;
+}
+
+/* Left Content */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-main-text {
+  font-size: 1.18rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.7;
+}
+
+.about-sub-text {
+  font-size: 1.02rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+/* Variety Pills / Tags */
+.variety-tags-wrapper {
+  margin-top: 10px;
+}
+
+.variety-tags-title {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--green-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 12px;
+}
+
+.variety-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.variety-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  background: var(--bg-cream);
+  border: 1px solid var(--border-subtle);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--green-deep);
+  transition: all var(--transition-fast);
+}
+
+.variety-tag:hover {
+  background: var(--green-mint);
+  border-color: var(--green-light);
+  transform: translateY(-2px);
+}
+
+/* Right Collage of food/fruit imagery */
+.about-collage {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.collage-item {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 3px solid #ffffff;
+  transition: transform var(--transition-normal);
+}
+
+.collage-item:hover {
+  transform: scale(1.03);
+}
+
+.collage-item-1 {
+  grid-column: 1;
+  height: 220px;
+}
+
+.collage-item-2 {
+  grid-column: 2;
+  height: 260px;
+  margin-top: -20px;
+}
+
+.collage-item-3 {
+  grid-column: 1;
+  height: 240px;
+  margin-top: -20px;
+}
+
+.collage-item-4 {
+  grid-column: 2;
+  height: 200px;
+}
+
+.collage-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.collage-center-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  padding: 12px 20px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border: 2px solid var(--green-mint);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 13px;
+  color: var(--green-deep);
+  z-index: 10;
+}
+
+@media (max-width: 960px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .about-collage {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .collage-item-2,
+  .collage-item-3 {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .collage-item-1,
+  .collage-item-2,
+  .collage-item-3,
+  .collage-item-4 {
+    height: 160px;
+  }
+}

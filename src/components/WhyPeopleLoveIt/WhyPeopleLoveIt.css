@@ -1,0 +1,96 @@
+/* ============================================================
+   CHENNAI FRUIT PUNCH — WHY PEOPLE LOVE IT STYLES
+   ============================================================ */
+
+.why-love-section {
+  background: var(--bg-cream);
+  position: relative;
+}
+
+.why-love-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.why-card {
+  background: #ffffff;
+  border-radius: var(--radius-xl);
+  padding: 36px 24px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.why-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: transparent;
+  transition: background var(--transition-normal);
+}
+
+.why-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(45, 106, 79, 0.18);
+}
+
+.why-card:hover::before {
+  background: linear-gradient(90deg, var(--green-fresh), var(--orange));
+}
+
+.why-icon-bubble {
+  width: 62px;
+  height: 62px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  margin-bottom: 22px;
+  transition: transform var(--transition-fast);
+}
+
+.why-card:hover .why-icon-bubble {
+  transform: scale(1.12) rotate(6deg);
+}
+
+.why-title {
+  font-family: var(--font-heading);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--green-deep);
+  margin-bottom: 10px;
+}
+
+.why-description {
+  font-size: 14.5px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .why-love-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .why-love-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .why-card {
+    padding: 26px 20px;
+  }
+}
