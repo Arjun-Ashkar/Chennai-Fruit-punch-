@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './MenuCard.css';
 
 export default function MenuCard({ item }) {
+  const [imgLoaded, setImgLoaded] = useState(false);
+
   const badgeClass = item.badge
     ? `badge-${item.badge.toLowerCase().replace(/\s+/g, '-')}`
     : '';
@@ -9,12 +11,14 @@ export default function MenuCard({ item }) {
   return (
     <article className="menu-card" aria-label={item.name}>
       {/* Image Wrap */}
-      <div className="menu-card-img-wrap">
+      <div className={`menu-card-img-wrap ${!imgLoaded ? 'img-loading' : 'img-ready'}`}>
         <img
           src={item.image}
           alt={item.name}
-          className="menu-card-img"
+          className={`menu-card-img ${imgLoaded ? 'loaded' : ''}`}
           loading="lazy"
+          decoding="async"
+          onLoad={() => setImgLoaded(true)}
         />
 
         {/* Promo Badge if present */}

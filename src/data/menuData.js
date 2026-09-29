@@ -1,11 +1,25 @@
 // ============================================================
 // CHENNAI FRUIT PUNCH — AUTHENTIC MENU DATA WITH ACCURATE IMAGERY
 // ============================================================
-// All menu items stored as structured data for dynamic rendering.
-// Images curated with exact matching colors, drinks, and food items.
-// ============================================================
 
-export const menuCategories = [
+export const getOptimizedImageUrl = (url, width = 450) => {
+  if (!url || typeof url !== 'string') return url;
+  try {
+    if (url.includes('images.unsplash.com')) {
+      const baseUrl = url.split('?')[0];
+      return `${baseUrl}?w=${width}&auto=format&fit=crop&q=75`;
+    }
+    if (url.includes('images.pexels.com')) {
+      const baseUrl = url.split('?')[0];
+      return `${baseUrl}?auto=compress&cs=tinysrgb&w=${width}`;
+    }
+    return url;
+  } catch (e) {
+    return url;
+  }
+};
+
+const rawMenuCategories = [
   {
     name: "Combo Offers",
     slug: "combo-offers",
@@ -309,6 +323,14 @@ export const menuCategories = [
     ],
   },
 ];
+
+export const menuCategories = rawMenuCategories.map((cat) => ({
+  ...cat,
+  items: cat.items.map((item) => ({
+    ...item,
+    image: getOptimizedImageUrl(item.image, 450),
+  })),
+}));
 
 // Helper: Get all items as a flat array
 export const getAllItems = () => {

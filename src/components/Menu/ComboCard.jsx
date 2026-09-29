@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ComboCard.css';
 
 export default function ComboCard({ combo }) {
+  const [imgLoaded, setImgLoaded] = useState(false);
+
   return (
     <article className="combo-card" aria-label={combo.name}>
       {/* Top Header Bar */}
@@ -18,12 +20,14 @@ export default function ComboCard({ combo }) {
       </div>
 
       {/* Visual Image */}
-      <div className="combo-img-wrap">
+      <div className={`combo-img-wrap ${!imgLoaded ? 'img-loading' : 'img-ready'}`}>
         <img
           src={combo.image}
           alt={combo.name}
-          className="combo-img"
+          className={`combo-img ${imgLoaded ? 'loaded' : ''}`}
           loading="lazy"
+          decoding="async"
+          onLoad={() => setImgLoaded(true)}
         />
       </div>
 

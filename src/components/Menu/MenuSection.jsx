@@ -7,16 +7,19 @@ import { menuCategories, getAllItems } from '../../data/menuData';
 export default function MenuSection({ selectedCategory, onSelectCategory }) {
   const [activeCategory, setActiveCategory] = useState(selectedCategory || 'all');
   const [searchQuery, setSearchQuery] = useState('');
+  const [visibleLimit, setVisibleLimit] = useState(16);
 
   // Sync with prop if changed from QuickHighlights
   React.useEffect(() => {
     if (selectedCategory) {
       setActiveCategory(selectedCategory);
+      setVisibleLimit(16);
     }
   }, [selectedCategory]);
 
   const handleCategoryClick = (slug) => {
     setActiveCategory(slug);
+    setVisibleLimit(16);
     if (onSelectCategory) {
       onSelectCategory(slug);
     }
@@ -57,6 +60,16 @@ export default function MenuSection({ selectedCategory, onSelectCategory }) {
 
     return items;
   }, [activeCategory, searchQuery]);
+
+  // When in ALL view without search, limit initial DOM nodes for instant mobile rendering
+  const displayedItems = useMemo(() => {
+    if (activeCategory === 'all' && !searchQuery.trim()) {
+      return filteredItems.slice(0, visibleLimit);
+    }
+    return filteredItems;
+  }, [filteredItems, activeCategory, searchQuery, visibleLimit]);
+
+  const hasMoreItems = activeCategory === 'all' && !searchQuery.trim() && visibleLimit < filteredItems.length;
 
   const showCombos = (activeCategory === 'all' || activeCategory === 'combo-offers') && !searchQuery.trim();
 
@@ -163,12 +176,31 @@ export default function MenuSection({ selectedCategory, onSelectCategory }) {
         {/* Regular Menu Items Grid */}
         {activeCategory !== 'combo-offers' && (
           <>
-            {filteredItems.length > 0 ? (
-              <div className="menu-items-grid">
-                {filteredItems.map((item) => (
-                  <MenuCard key={item.id} item={item} />
-                ))}
-              </div>
+            {displayedItems.length > 0 ? (
+              <>
+                <div className="menu-items-grid">
+                  {displayedItems.map((item) => (
+                    <MenuCard key={item.id} item={item} />
+                  ))}
+                </div>
+
+                {hasMoreItems && (
+                  <div className="menu-load-more-wrap">
+                    <button
+                      type="button"
+                      className="btn-load-more"
+                      onClick={() => setVisibleLimit((prev) => prev + 16)}
+                      aria-label="Load more dishes"
+                    >
+                      <span>🍽️</span>
+                      <span>Load More Dishes ({filteredItems.length - displayedItems.length} remaining)</span>
+                    </button>
+                    <span className="menu-load-count-note">
+                      Showing {displayedItems.length} of {filteredItems.length} items
+                    </span>
+                  </div>
+                )}
+              </>
             ) : (
               <div className="empty-menu-state">
                 <div className="empty-icon">🍽️</div>
