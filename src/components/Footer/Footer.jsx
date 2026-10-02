@@ -1,6 +1,7 @@
 import React from 'react';
 import './Footer.css';
 import { siteConfig } from '../../data/siteConfig';
+import logoImage from '../../assets/logo.png.jpeg';
 
 const quickLinks = [
   { label: 'Home', id: 'hero' },
@@ -26,7 +27,7 @@ export default function Footer() {
           {/* Brand Col */}
           <div className="footer-brand-col">
             <div className="footer-logo">
-              <div className="footer-logo-badge" aria-hidden="true">🍹</div>
+              <img src={logoImage} alt="" className="footer-logo-badge" />
               <span className="footer-logo-title">{siteConfig.name}</span>
             </div>
             <p className="footer-tagline">

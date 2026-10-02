@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import { siteConfig } from '../../data/siteConfig';
+import logoImage from '../../assets/logo.png.jpeg';
 
 const navItems = [
   { label: 'Home', id: 'hero' },
@@ -75,8 +76,8 @@ export default function Navbar({ activeSection = 'hero' }) {
             }}
             aria-label="Chennai Fruit Punch Home"
           >
-            <div className="logo-badge" aria-hidden="true">
-              🍹
+            <div className="logo-badge">
+              <img src={logoImage} alt="" />
             </div>
             <div className="logo-text-wrapper">
               <span className="logo-city">Chennai</span>
@@ -147,7 +148,7 @@ export default function Navbar({ activeSection = 'hero' }) {
         >
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '32px' }}>
-              <span style={{ fontSize: '28px' }}>🍹</span>
+              <img src={logoImage} alt="" className="mobile-logo-image" />
               <div>
                 <div style={{ fontSize: '11px', fontWeight: 800, letterSpacing: '2px', color: 'var(--orange)' }}>CHENNAI</div>
                 <div style={{ fontSize: '18px', fontWeight: 900, color: 'var(--green-deep)' }}>FRUIT PUNCH</div>
